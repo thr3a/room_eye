@@ -24,9 +24,9 @@ var graph_option = {
     color: '#808080'
   }],
   legend: {
-    layout: 'vertical',
-    align: 'right',
-    verticalAlign: 'middle',
+    // layout: 'vertical',
+    align: 'left',
+    // verticalAlign: 'middle',
     borderWidth: 0
   },
   series: []
