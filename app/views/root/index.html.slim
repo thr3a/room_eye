@@ -1,2 +1,46 @@
-h1 Root#index
-p Find me in app/views/root/index.html.slim
+#graph
+javascript:
+  $(function () {
+    $('#graph').highcharts({
+      title: {
+        text: '',
+        x: -20 //center
+      },
+      subtitle: {
+        text: '',
+        x: -20
+      },
+      xAxis: {
+        categories: #{raw @x.to_json}
+      },
+      yAxis: [{
+        title: {text: '気温'}
+      },{
+        title: {text:'湿度'},opposite: true
+      }],
+      plotLines: [{
+        value: 0,
+        width: 1,
+        color: '#808080'
+      }],
+      legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+        borderWidth: 0
+      },
+      series: [{
+        type: 'spline',
+        name: '気温',
+        data: #{raw @temp.to_json},
+        tooltip: { valueSuffix: '°C' },
+        yAxis: 0
+      },{
+        type: 'spline',
+        name: '湿度',
+        data: #{raw @humid.to_json},
+        tooltip: { valueSuffix: '%' },
+        yAxis: 1
+      }]
+    });
+  });
