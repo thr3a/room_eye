@@ -30,5 +30,27 @@ var graph_option = {
     // verticalAlign: 'middle',
     borderWidth: 0
   },
-  series: []
+  series: [
+  {
+    type: 'column',
+    name: '気圧',
+    data: [],
+    tooltip: { valueSuffix: 'hpa' },
+    yAxis: 2
+  },
+  {
+    type: 'spline',
+    name: '湿度',
+    data: [],
+    tooltip: { valueSuffix: '%' },
+    yAxis: 1
+  },
+  {
+    type: 'spline',
+    name: '気温',
+    data: [],
+    tooltip: { valueSuffix: '°C' },
+    yAxis: 0
+  }
+  ]
 };

@@ -2,29 +2,9 @@
 javascript:
   $(function () {
     // グラフデータの追加
-    graph_option.series = [
-    {
-      type: 'column',
-      name: '気圧',
-      data: #{raw @hpa.to_json},
-      tooltip: { valueSuffix: 'hpa' },
-      yAxis: 2
-    },
-    {
-      type: 'spline',
-      name: '湿度',
-      data: #{raw @humid.to_json},
-      tooltip: { valueSuffix: '%' },
-      yAxis: 1
-    },
-    {
-      type: 'spline',
-      name: '気温',
-      data: #{raw @temp.to_json},
-      tooltip: { valueSuffix: '°C' },
-      yAxis: 0
-    }
-    ];
+    graph_option.series[0]['data'] = #{raw @hpa.to_json};
+    graph_option.series[1]['data'] = #{raw @humid.to_json};
+    graph_option.series[2]['data'] = #{raw @temp.to_json};
     graph_option.xAxis.categories = #{raw @x.to_json};
     var graph = new Highcharts.chart(graph_option); // グラフ描画
   });
