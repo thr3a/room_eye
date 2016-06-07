@@ -1,3 +1,18 @@
+.container
+  table.table.table-bordered.text-center
+    tr
+      td.col-md-6
+        span.h3 気温
+        .h3 = @latest[:temp].to_s+"℃"
+      td.col-md-6
+        span.h3 湿度
+        .h3 = @latest[:humid].to_s+"％"
+    tr
+      td
+        span.h3 気圧
+        .h3 = @latest[:hpa].to_s+"hpa"
+      td
+
 #graph
 javascript:
   $(function () {
