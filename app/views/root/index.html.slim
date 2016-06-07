@@ -4,6 +4,13 @@ javascript:
     // グラフデータの追加
     graph_option.series = [
     {
+      type: 'column',
+      name: '気圧',
+      data: #{raw @hpa.to_json},
+      tooltip: { valueSuffix: 'hpa' },
+      yAxis: 2
+    },
+    {
       type: 'spline',
       name: '湿度',
       data: #{raw @humid.to_json},
@@ -16,7 +23,8 @@ javascript:
       data: #{raw @temp.to_json},
       tooltip: { valueSuffix: '°C' },
       yAxis: 0
-    }];
+    }
+    ];
     graph_option.xAxis.categories = #{raw @x.to_json};
     var graph = new Highcharts.chart(graph_option); // グラフ描画
   });

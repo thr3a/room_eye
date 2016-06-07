@@ -11,12 +11,18 @@ var graph_option = {
     x: -20
   },
   xAxis: {
-    categories: []
+    categories: [],
+    crosshair: true
+  },
+  tooltip: {
+    shared: true
   },
   yAxis: [{
     title: {text: '気温'}
   },{
     title: {text:'湿度'},opposite: true
+  },{
+    title: {text:'気圧'},opposite: true
   }],
   legend: {
     // layout: 'vertical',
