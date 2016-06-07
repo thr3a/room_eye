@@ -18,11 +18,6 @@ var graph_option = {
   },{
     title: {text:'湿度'},opposite: true
   }],
-  plotLines: [{
-    value: 0,
-    width: 1,
-    color: '#808080'
-  }],
   legend: {
     // layout: 'vertical',
     align: 'left',
