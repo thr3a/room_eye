@@ -17,5 +17,7 @@ html
       div class="alert alert-#{type}"
         - Array(msg).each do |m|
           p = m
-    h1 = Myrails::Application.config.title
+    h1
+      i.fa.fa-eye#title-icon
+      span  = " "+Myrails::Application.config.title
   = yield
