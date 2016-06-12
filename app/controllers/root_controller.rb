@@ -1,6 +1,6 @@
 class RootController < ApplicationController
   def index
-    latest = Condition.order(created_at: :desc).last
+    latest = Condition.order(created_at: :asc).last
     @latest = {temp: latest.temp, humid: latest.humid, hpa: latest.hpa}
     @temp = []
     @humid = []
